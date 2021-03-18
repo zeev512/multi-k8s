@@ -11,6 +11,10 @@ docker push cygnetops/multi-server-k8s-pgfix:$SHA
 docker push cygnetops/multi-worker-k8s:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=cygnetops/multi-server-k8s-pgfix:$SHA
-kubectl set image deployments/client-deployment client=cygnetops/multi-client-k8s:$SHA
-kubectl set image deployments/worker-deployment worker=cygnetops/multi-worker-k8s:$SHA
+# kubectl set image deployments/server-deployment server=cygnetops/multi-server-k8s-pgfix:$SHA
+# kubectl set image deployments/client-deployment client=cygnetops/multi-client-k8s:$SHA
+# kubectl set image deployments/worker-deployment worker=cygnetops/multi-worker-k8s:$SHA
+kubectl set image deployments/server-deployment server=cygnetops/multi-server-k8s-pgfix:latest
+kubectl set image deployments/client-deployment client=cygnetops/multi-client-k8s:latest
+kubectl set image deployments/worker-deployment worker=cygnetops/multi-worker-k8s:latest
+
